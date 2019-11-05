@@ -1,0 +1,6 @@
+{
+    "disableAutoUpdate": false,
+    "name": "slay",
+    "description": "A slaying module.",
+    "servers": ["https://raw.githubusercontent.com/Xtortion/slay/master/"]
+}

@@ -1,7 +1,13 @@
 {
-	"data": {
-		"index.js": "0WtvUq94GfnO7Y3/mJygC6fDx3FEb7xS5JgT7f4AY9M=",
-		"mod.json": "lP2frJg6QuXu7wrZVP5UGZZ5fdN19Vz8Lcvu2n4RyTE=",
-		"README.md": "Oei5rdhPLUwzBiNYDWDFx2owABhP8xP+VJxqu5cRYsc="
-	}
+    "files": {
+        "README.md": "95cdc74d9c169faa05c9354c061390607541da18336e19f93df8aa31f7c4d869",
+        "index.js": "b2caeb0753fc0a776ef3120d416e5f2cd8e4194c16aa78860383f25a50bb8ffd",
+        "module.json": "8697043ab717d35d3bdafa9f878b38b4510805c1302845106c273275c5c7998a"
+    },
+    "defs": {
+        "C_PLAYER_LOCATION": 5,
+        "S_CREATURE_CHANGE_HP": 6,
+        "S_LOGIN": 14,
+        "S_PLAYER_STAT_UPDATE": 13
+    }
 }

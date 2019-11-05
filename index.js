@@ -5,23 +5,23 @@ module.exports = function Slay(mod) {
 		isCastanic = false,
 		location = null,
 		locRealTime = 0,
-		curHp = 0,
-		maxHp = 0
+		curHp = 0n,
+		maxHp = 0n
 
-	mod.hook('S_LOGIN', mod.patchVersion < 81 ? 12 : 13, event => {
+	mod.hook('S_LOGIN', 14, event => {
 		({gameId} = event)
 		isCastanic = Math.floor((event.templateId - 10101) / 200) === 3
 	})
 
-	mod.hook('S_PLAYER_STAT_UPDATE', 10, event => {
-		curHp = Number(event.hp)
-		maxHp = Number(event.maxHp)
+	mod.hook('S_PLAYER_STAT_UPDATE', 13, event => {
+		curHp = event.hp
+		maxHp = event.maxHp
 	})
 
 	mod.hook('S_CREATURE_CHANGE_HP', 6, event => {
 		if(event.target === gameId) {
-			curHp = Number(event.curHp)
-			maxHp = Number(event.maxHp)
+			curHp = event.curHp
+			maxHp = event.maxHp
 		}
 	})
 
@@ -35,7 +35,7 @@ module.exports = function Slay(mod) {
 
 		if(!(percent > 0 && percent <= 100) || !curHp) return
 
-		const percentToDrop = curHp * 100 / maxHp - percent
+		const percentToDrop = Number(curHp * 100n / maxHp) - percent
 
 		if(percentToDrop <= 0) return
 
